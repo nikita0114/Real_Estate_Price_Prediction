@@ -1,24 +1,23 @@
 from flask import Flask, request, jsonify
 from flask_cors import CORS
-import server.util as util  # ✅ Use relative import if util.py is in the same 'server' folder
+from server import util  # make sure util is imported correctly from same package
 
 app = Flask(__name__)
 CORS(app)
 
-# Load the model and data columns when app starts
 util.load_saved_artifacts()
 
+@app.route('/')
+def home():
+    return "🎉 Real Estate Price Prediction API is running!"
 
 @app.route('/get_location_names')
 def get_location_names():
     try:
         locations = util.get_location_names()
-        return jsonify({
-            'locations': locations
-        })
+        return jsonify({'locations': locations})
     except Exception as e:
         return jsonify({'error': str(e)}), 500
-
 
 @app.route('/predict_home_price', methods=['POST'])
 def predict_home_price():
@@ -29,12 +28,10 @@ def predict_home_price():
         bath = int(request.form['bath'])
 
         estimated_price = util.get_estimated_price(location, total_sqft, bhk, bath)
-
-        return jsonify({
-            'estimated_price': round(estimated_price, 2)
-        })
+        return jsonify({'estimated_price': estimated_price})
     except Exception as e:
         return jsonify({'error': str(e)}), 500
 
-
-# ❌ Don't include app.run() — Render uses gunicorn to serve the app
+if __name__ == "__main__":
+    print("✅ Starting Flask app...")
+    app.run(debug=True)
