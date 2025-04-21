@@ -1,13 +1,13 @@
 from flask import Flask, request, jsonify
-from . import util
+import util  # Direct import instead of relative import
 
 from flask_cors import CORS
 
 app = Flask(__name__)
 CORS(app)
 
+# Ensure that the artifacts are loaded properly when the server starts
 util.load_saved_artifacts()
-
 
 @app.route('/get_location_names')
 def get_location_names():
@@ -23,11 +23,13 @@ def get_location_names():
 @app.route('/predict_home_price', methods=['POST'])  # Ensure 'POST' method is mentioned here
 def predict_home_price():
     try:
+        # Retrieve data from the POST request
         total_sqft = float(request.form['total_sqft'])
         location = request.form['location']
         bhk = int(request.form['bhk'])
         bath = int(request.form['bath'])
 
+        # Use util to predict the price
         estimated_price = util.get_estimated_price(location, total_sqft, bhk, bath)
 
         return jsonify({
