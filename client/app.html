@@ -1,15 +1,21 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Real Estate Price Prediction</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="app.js"></script>
     <link rel="stylesheet" href="app.css">
 </head>
 
-<body>
-    <div class="img"></div>
+<body onload="onPageLoad()">
+    <!-- Image Section (optional, could be removed if unnecessary) -->
+    <div class="img">
+        <!-- You can add an image or leave it empty as per your requirement -->
+    </div>
 
+    <!-- Form Section -->
     <div class="form">
         <h2>Area (Square Feet)</h2>
         <input class="area" type="number" id="uiSqft" name="Squareft" value="1000">
@@ -52,9 +58,8 @@
         <br>
         <button class="submit" onclick="onClickedEstimatePrice()" type="button">Estimate Price</button>
 
-        <div id="uiEstimatedPrice" class="result">
-            
-        </div>
+        <!-- Section to display estimated price -->
+        <div id="uiEstimatedPrice" class="result"></div>
     </div>
 </body>
 </html>
