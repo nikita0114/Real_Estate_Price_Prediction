@@ -1,7 +1,7 @@
 from flask import Flask, request, jsonify, send_from_directory, render_template
 from flask_cors import CORS
 import os
-import util  # Assuming util.py is in the same directory as server.py
+import server.util # Assuming util.py is in the same directory as server.py
 
 app = Flask(__name__, static_folder='client', template_folder='client')  # Set the client folder path
 CORS(app)
