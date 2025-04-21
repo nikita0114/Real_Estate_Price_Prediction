@@ -1,5 +1,5 @@
 from flask import Flask, request, jsonify
-import util  # Make sure 'util' is imported properly
+from server import util  # Make sure 'util' is imported properly
 
 from flask_cors import CORS
 
