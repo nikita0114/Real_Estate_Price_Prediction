@@ -1,5 +1,8 @@
-flask
-joblib
+Flask==3.1.0
+Flask-Cors==3.1.1
+gunicorn==23.0.0
 pandas
 scikit-learn
-gunicorn
+joblib
+numpy
+
