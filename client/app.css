@@ -1,11 +1,9 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto:300);
-
 .switch-field {
 	display: flex;
 	margin-bottom: 36px;
 	overflow: hidden;
 }
-
 .switch-field input {
 	position: absolute;
 	clip: rect(0, 0, 0, 0);
@@ -14,7 +12,6 @@
 	border: 0;
 	overflow: hidden;
 }
-
 .switch-field label {
 	background-color: #e4e4e4;
 	color: rgba(0, 0, 0, 0.6);
@@ -27,20 +24,16 @@
 	box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.3), 0 1px rgba(255, 255, 255, 0.1);
 	transition: all 0.1s ease-in-out;
 }
-
 .switch-field label:hover {
 	cursor: pointer;
 }
-
 .switch-field input:checked + label {
 	background-color: #a5dc86;
 	box-shadow: none;
 }
-
 .switch-field label: first-of-type {
 	border-radius: 0 4px 4px 0;
 }
-
 .form {
 	max-width: 270px;
 	font-family: "Lucida Grande", Tahoma, Verdana, sans-serif;
@@ -50,12 +43,10 @@
 	padding-left: 16px;
 	z-index: 2;
 }
-
 h2 {
 	font-size: 18px;
 	margin-bottom:8px;
 }
-
 .area{
 	font-family: "Roboto", sans-serif;
 	outline: 0;
@@ -68,7 +59,6 @@ h2 {
 	font-size: 15px;
 	border-radius: 5px;
 }
-
 .location {
 	font-family: "Roboto", sans-serif;
 	outline:0;
@@ -82,7 +72,6 @@ h2 {
 	height: 40px;
 	border-radius: 5px;
 }
-
 .submit{
 	background: #a5dc86;
 	width: 76%;
@@ -94,7 +83,6 @@ h2 {
 	text-align:center;
 	border-radius: 5px;
 }
-
 .result{
 	background: #dcd686;
 	width: 76%;
@@ -105,7 +93,6 @@ h2 {
 	height: 35px;
 	text-align:center;
 }
-
 .img {
 	background: url('https://images.unsplash.com/photo-1564013799919-ab600027ffc6?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8cmVhbCUyMGVzdGF0ZSUyMGhvdXNlfGVufDB8fDB8fHww');
 	background-repeat: no-repeat;
@@ -123,7 +110,6 @@ h2 {
 	left: 0;
 	z-index: -1;
 }
-
 body, html {
 	height: 100%;
 }

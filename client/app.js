@@ -27,6 +27,7 @@ function onClickedEstimatePrice() {
 	var estPrice = document.getElementById("uiEstimatedPrice");
 
 	var url = "http://127.0.0.1:5000/predict_home_price";
+	//var url = "/api/predict_home_price";
 
 	$.ajax({
 		type: "POST",
@@ -51,13 +52,10 @@ function onClickedEstimatePrice() {
 		}
 	});
 }
-
-
-
 function onPageLoad() {
 	console.log("document loaded");
 	var url = "http://127.0.0.1:5000/get_location_names";
-
+	//var url = "/api/get_location_names",
 	$.get(url, function(data, status) {
 		console.log("got response for get_location_names request");
 		if (data) {
@@ -71,5 +69,4 @@ function onPageLoad() {
 		}
 	});
 }
-
 window.onload = onPageLoad;
